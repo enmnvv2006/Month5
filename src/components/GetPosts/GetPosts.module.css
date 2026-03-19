@@ -1,0 +1,46 @@
+.postsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #f7e5ff;
+  min-height: 100vh;
+  border-radius: 10px;
+}
+
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.postCard {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.postTitle {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.postBody {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .postsGrid {
+    grid-template-columns: 1fr;
+  }
+}
