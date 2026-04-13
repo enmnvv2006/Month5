@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "http://nu.tipo.lol",
+  baseURL: "http://localhost:3000",
   headers: {
     "Content-Type": "application/json",
   },
@@ -15,6 +15,12 @@ api.interceptors.request.use(
       if (token) {
         config.headers = config.headers || {};
         config.headers.Authorization = `Bearer ${token}`;
+        console.log(
+          "Token attached to request:",
+          token.substring(0, 20) + "...",
+        );
+      } else {
+        console.warn("No accessToken found in localStorage");
       }
     } catch {
       // ignore
